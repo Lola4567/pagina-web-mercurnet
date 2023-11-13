@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="mercurnet" content="width=device-width, initial-scale=1.0">
+    <title>Codigo de acceso</title>
+    <script>
+        function generarCodigoAlAzar() {
+            // Generar un código al azar
+            var codigoAlAzar = Math.floor(Math.random() * 1000000) + 1;
+
+            // Mostrar el código generado
+            document.getElementById('codigoGenerado').innerHTML = "Código generado: " + codigoAlAzar;
+        }
+
+        function verificarCodigo() {
+            // Obtener el código ingresado por el usuario
+            var codigoIngresado = document.getElementById('codigoInput').value;
+
+            // Verificar si el código ingresado es válido
+            if (codigoIngresado == 2234983 || codigoIngresado == 2235319) {
+                // Generar un código al azar si es válido
+                generarCodigoAlAzar();
+            } else {
+                // Mostrar un mensaje de error si el código no es válido
+                alert("Código estudiantil inválido.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Generador de Código al Azar</h2>
+    <label for="codigoInput">Ingrese un código:</label>
+    <input type="text" id="codigoInput" placeholder="ingreselo aqui">
+    <button onclick="verificarCodigo()">Generar Código</button>
+    <p id="codigoGenerado"></p>
+</body>
+</html>
